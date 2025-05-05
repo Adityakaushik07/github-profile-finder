@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Finder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-black to-gray-800 min-h-screen flex items-center justify-center px-4 py-10 text-white"
+  >
+    <div
+      class="w-full max-w-xl bg-[#1f1f1f] shadow-2xl rounded-2xl p-8 space-y-8"
+    >
+      <h1 class="text-4xl font-extrabold text-center text-blue-400">
+        GitHub Profile Finder
+      </h1>
+
+      <!-- Search -->
+      <div class="flex items-center gap-4">
+        <input
+          id="search-bar"
+          type="search"
+          placeholder="🔍 Enter GitHub username..."
+          class="flex-1 px-4 py-3 rounded-xl bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none transition"
+        />
+        <button
+          id="search-Btn"
+          class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl font-semibold shadow-lg"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Error Message -->
+      <p id="error" class="text-red-500 text-center hidden">
+        ❌ User not found!
+      </p>
+
+      <!-- Actual Profile Info -->
+      <div
+        id="profile-container"
+        class="hidden transition duration-300 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-2xl p-6 shadow-lg border border-gray-700 backdrop-blur-md space-y-6"
+      >
+        <div class="flex flex-col items-center space-y-4">
+          <img
+            id="profilePic"
+            class="w-28 h-28 rounded-full border-4 border-blue-500 shadow-md"
+            src=""
+            alt="Profile Pic"
+          />
+          <h2 id="username" class="text-2xl font-bold text-white"></h2>
+          <p
+            id="bio"
+            class="text-sm text-gray-400 italic text-center max-w-xs"
+          ></p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mt-4"
+        >
+          <p id="location">
+            📍 Location: <span class="text-white font-medium">N/A</span>
+          </p>
+          <p id="company">
+            🏢 Company: <span class="text-white font-medium">N/A</span>
+          </p>
+          <p id="website">
+            🔗 Website:
+            <a href="#" target="_blank" class="text-blue-400 hover:underline"
+              >N/A</a
+            >
+          </p>
+          <p id="twitter">
+            🐦 Twitter:
+            <a href="#" target="_blank" class="text-blue-400 hover:underline"
+              >N/A</a
+            >
+          </p>
+          <p id="joined">
+            📅 Joined: <span class="text-white font-medium">N/A</span>
+          </p>
+        </div>
+
+        <div class="flex justify-around text-sm text-gray-300 mt-2">
+          <p id="followers"></p>
+          <p id="followings"></p>
+        </div>
+
+        <p
+          id="repo"
+          class="text-sm text-center text-blue-300 font-medium mt-2"
+        ></p>
+
+        <div>
+          <h3 class="text-md font-semibold text-white mb-2">
+            Top Repositories
+          </h3>
+          <div
+            id="repoList"
+            class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
